@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header-area">
+    <h2 class="show-message"></h2>
+    <!-- <header class="header-area">
       <h1 class="logo">Logo</h1>
       <nav>
         <ul class="mainmenu">
@@ -23,87 +24,15 @@
           <li><a href="index.html">contact</a></li>
         </ul>
       </nav>
-    </header>
+    </header> -->
     <main>
-      <div class="service-area">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Frontend Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Backend Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Ux/Ui Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Andriod Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Andriod Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Andriod Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Andriod Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="service-wrap">
-                <h3 class="title">Andriod Developer</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium, nisi?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
+      <ul class="mainmenu">
+        <li class="active" data-id="home">Home</li>
+        <li data-id="about">About</li>
+        <li data-id="service">Service</li>
+        <li data-id="contact">Contact</li>
+      </ul>
+      <!-- <div class="contact">
         <form action="">
           <label for="name">Name</label>
           <input type="text" name="name" placeholder="Your name" id="name" />
@@ -125,45 +54,73 @@
           <input type="radio" name="radio" />
           <input type="radio" name="radio" />
         </form>
-      </div>
+      </div> -->
+      <ul class="country-list">
+        <li>Pakisthan</li>
+      </ul>
+      <input type="text" class="input-value" />
+      <input type="email" class="email" />
     </main>
-    <footer class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h3 class="footer-logo">Logo</h3>
-          </div>
-          <div class="col">
-            <h4 class="footer">Service</h4>
-            <ul class="mainmenu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html">About</a></li>
-              <li><a href="index.html">Service</a></li>
-              <li><a href="index.html">contact</a></li>
-            </ul>
-          </div>
-          <div class="col">
-            <h4 class="footer">Service</h4>
+    <h1 class="title">Javascript class</h1>
+    <button class="click-btn">Click</button>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+      let name;
+      let email;
+      $(".input-value").on("change", function (e) {
+        name = e.target.value;
+      });
+      $(".email").on("change", function (e) {
+        email = e.target.value;
+      });
+      $(".click-btn").click(function () {
+        $.post(
+          "https://perfectedgetech.com/all-dev-projects/perfectjob-admin/api/contact-us",
+          {
+            name: name,
+            email: email,
+            phone: "1656565656655",
+            message: "Hello this javascript class",
+          },
+          function (data, status) {
+            if (data.status) {
+              $(".show-message").text(data.message);
+            }
+          }
+        );
+      });
+      //   $(window).on("load", function () {
+      //     $.get(
+      //       "https://perfectedgetech.com/all-dev-projects/perfectjob-admin/api/country-list",
+      //       function (data, status) {
+      //         if (status == "success") {
+      //           const get_country_list = data.data.country_list;
+      //           const country_keys = Object.keys(get_country_list);
+      //           for (i = 0; i < country_keys.length; i++) {
+      //             $(".country-list").prepend(
+      //               `<li>${get_country_list[country_keys[i]]}</li>`
+      //             );
+      //           }
+      //         } else {
+      //           console.log("server error");
+      //         }
+      //       }
+      //     );
+      //   });
+      $(".click-btn").click(function () {
+        $(".title").toggleClass("title2");
+        if ($(".title").hasClass("title2")) {
+          $(".title").css("color", "red");
+        } else {
+          $(".title").css("color", "blue");
+        }
+      });
 
-            <ul class="mainmenu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html">About</a></li>
-              <li><a href="index.html">Service</a></li>
-              <li><a href="index.html">contact</a></li>
-            </ul>
-          </div>
-          <div class="col">
-            <h4 class="footer">Service</h4>
-
-            <ul class="mainmenu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html">About</a></li>
-              <li><a href="index.html">Service</a></li>
-              <li><a href="index.html">contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+      $(".mainmenu li").on("click", function () {
+        $(".mainmenu li").removeClass("active");
+        $(this).addClass("active");
+        const get_id = $(this).data("id");
+      });
+    </script>
   </body>
 </html>
