@@ -4,123 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <h2 class="show-message"></h2>
-    <!-- <header class="header-area">
-      <h1 class="logo">Logo</h1>
-      <nav>
-        <ul class="mainmenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">About</a></li>
-          <li><a href="index.html">Service</a></li>
-          <li><a href="index.html">contact</a></li>
-        </ul>
-      </nav>
-    </header> -->
-    <main>
-      <ul class="mainmenu">
-        <li class="active" data-id="home">Home</li>
-        <li data-id="about">About</li>
-        <li data-id="service">Service</li>
-        <li data-id="contact">Contact</li>
-      </ul>
-      <!-- <div class="contact">
-        <form action="">
-          <label for="name">Name</label>
-          <input type="text" name="name" placeholder="Your name" id="name" />
-          <input type="email" name="name" placeholder="Your name" id="name" />
-          <input type="date" name="name" placeholder="Your name" id="name" />
-          <select name="select" id="">
-            <option value="1">Option 1</option>
-          </select>
-          <input type="checkbox" name="checkbox" />
-          <input type="checkbox" name="checkbox" />
-          <input type="checkbox" name="checkbox" />
-          <input type="checkbox" name="checkbox" />
-          <input type="checkbox" name="checkbox" />
-
-          <br />
-          <input type="radio" name="radio" value="1" />
-          <input type="radio" name="radio" />
-          <input type="radio" name="radio" />
-          <input type="radio" name="radio" />
-          <input type="radio" name="radio" />
-        </form>
-      </div> -->
-      <ul class="country-list">
-        <li>Pakisthan</li>
-      </ul>
-      <input type="text" class="input-value" />
-      <input type="email" class="email" />
-    </main>
-    <h1 class="title">Javascript class</h1>
-    <button class="click-btn">Click</button>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script>
-      let name;
-      let email;
-      $(".input-value").on("change", function (e) {
-        name = e.target.value;
-      });
-      $(".email").on("change", function (e) {
-        email = e.target.value;
-      });
-      $(".click-btn").click(function () {
-        $.post(
-          "https://perfectedgetech.com/all-dev-projects/perfectjob-admin/api/contact-us",
-          {
-            name: name,
-            email: email,
-            phone: "1656565656655",
-            message: "Hello this javascript class",
-          },
-          function (data, status) {
-            if (data.status) {
-              $(".show-message").text(data.message);
-            }
-          }
-        );
-      });
-      //   $(window).on("load", function () {
-      //     $.get(
-      //       "https://perfectedgetech.com/all-dev-projects/perfectjob-admin/api/country-list",
-      //       function (data, status) {
-      //         if (status == "success") {
-      //           const get_country_list = data.data.country_list;
-      //           const country_keys = Object.keys(get_country_list);
-      //           for (i = 0; i < country_keys.length; i++) {
-      //             $(".country-list").prepend(
-      //               `<li>${get_country_list[country_keys[i]]}</li>`
-      //             );
-      //           }
-      //         } else {
-      //           console.log("server error");
-      //         }
-      //       }
-      //     );
-      //   });
-      $(".click-btn").click(function () {
-        $(".title").toggleClass("title2");
-        if ($(".title").hasClass("title2")) {
-          $(".title").css("color", "red");
-        } else {
-          $(".title").css("color", "blue");
-        }
-      });
-
-      $(".mainmenu li").on("click", function () {
-        $(".mainmenu li").removeClass("active");
-        $(this).addClass("active");
-        const get_id = $(this).data("id");
-      });
-    </script>
+    <header class="header-area">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="header-logo-menu d-flex align-items-center">
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.svg" alt="logo" />
+            </a>
+            <ul class="mainmenu d-flex align-items-center">
+              <li>
+                <a href="#">Buy <i class="fa fa-angle-down"></i></a>
+              </li>
+              <li>
+                <a href="#">Sell <i class="fa fa-angle-down"></i></a>
+              </li>
+              <li>
+                <a href="#">Hire <i class="fa fa-angle-down"></i></a>
+              </li>
+            </ul>
+          </div>
+          <ul class="header-right d-flex align-items-center">
+            <li><i class="fa fa-heart"></i></li>
+            <li><a class="login" href="#">Log in</a></li>
+            <li><a class="signup" href="#">Signup Lorem, ipsum.</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
