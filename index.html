@@ -18,23 +18,57 @@
             </a>
             <ul class="mainmenu d-flex align-items-center">
               <li>
-                <a href="#">Buy <i class="fa fa-angle-down"></i></a>
+                <a href="Javascript:void(0)">
+                  Buy <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="submenu">
+                  <li><a href="Javascript:void(0)">Submenu 1</a></li>
+                  <li>
+                    <a href="Javascript:void(0)">
+                      Submenu 2 <i class="fa fa-angle-right"></i>
+                    </a>
+                    <ul class="submenu">
+                      <li><a href="Javascript:void(0)">Submenu 1</a></li>
+                      <li>
+                        <a href="Javascript:void(0)"> Submenu 2 </a>
+                      </li>
+                      <li><a href="Javascript:void(0)">Submenu 2</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="Javascript:void(0)">Submenu 2</a></li>
+                </ul>
               </li>
               <li>
-                <a href="#">Sell <i class="fa fa-angle-down"></i></a>
+                <a href="Javascript:void(0)"
+                  >Sell <i class="fa fa-angle-down"></i
+                ></a>
               </li>
               <li>
-                <a href="#">Hire <i class="fa fa-angle-down"></i></a>
+                <a href="Javascript:void(0)"
+                  >Hire <i class="fa fa-angle-down"></i
+                ></a>
               </li>
             </ul>
           </div>
           <ul class="header-right d-flex align-items-center">
             <li><i class="fa fa-heart"></i></li>
-            <li><a class="login" href="#">Log in</a></li>
-            <li><a class="signup" href="#">Signup Lorem, ipsum.</a></li>
+            <li><a class="login" href="Javascript:void(0)">Log in</a></li>
+            <li>
+              <a class="signup" href="Javascript:void(0)"
+                >Signup Lorem, ipsum.</a
+              >
+            </li>
           </ul>
         </div>
       </div>
+      <h1 id="get_full_year"></h1>
     </header>
+    <script>
+      const weeks = ["Sat", "sun", "mon", "abc"];
+      const get_date = new Date();
+      const get_full_year = get_date.getMonth();
+      console.log(get_date, "get_full_year");
+      document.getElementById("get_full_year").innerText = get_full_year;
+    </script>
   </body>
 </html>

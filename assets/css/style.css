@@ -69,7 +69,9 @@ a:hover {
 }
 .mainmenu li {
   margin-right: 35px;
+  position: relative;
 }
+
 .mainmenu li a {
   font-weight: 500;
   font-size: 16px;
@@ -78,6 +80,43 @@ a:hover {
 }
 .mainmenu li a:hover {
   color: #ff600a;
+}
+.mainmenu li .submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #000;
+  min-width: 150px;
+  padding: 20px 0px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.mainmenu li .submenu li {
+  margin-right: 0;
+  margin-bottom: 5px;
+  padding: 0px 20px;
+}
+.mainmenu li .submenu li:last-child {
+  margin-bottom: 0;
+}
+.mainmenu li:hover > .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
+}
+.mainmenu li .submenu li .submenu {
+  left: 100%;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.mainmenu li .submenu li:hover .submenu {
+  transform: scaleX(1);
 }
 .header-right li {
   margin-right: 15px;
